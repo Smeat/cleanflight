@@ -1,29 +1,11 @@
 # boards are ordered by priority so that when monitoring a build developers get feedback on the important ones first.
 env:
   - RUNTESTS=True
-  - PUBLISHMETA=True
-  - PUBLISHDOCS=True
-  - TARGET=SPRACINGF3MINI
-  - TARGET=SPRACINGF3EVO
-  - TARGET=SPRACINGF3NEO
-  - TARGET=SPRACINGF3
-  - TARGET=SPRACINGF3OSD
-  - TARGET=SPRACINGF1OSD
-  - TARGET=NAZE
+  - PUBLISHMETA=False
+  - PUBLISHDOCS=False
   - TARGET=CC3D
   - TARGET=CJMCU
-  - TARGET=SPARKY
-  - TARGET=COLIBRI_RACE
-  - TARGET=LUX_RACE  
-  - TARGET=MOTOLAB
-  - TARGET=RMDO
-  - TARGET=ALIENFLIGHTF3
-  - TARGET=ALIENFLIGHTF1
-  - TARGET=STM32F3DISCOVERY
-  - TARGET=PORT103R
-  - TARGET=CHEBUZZF3
-  - TARGET=IRCFUSIONF3
-  - TARGET=RCEXPLORERF3
+
 
 # use new docker environment
 sudo: false
@@ -57,8 +39,3 @@ script: ./.travis.sh
 cache:
   - apt
   - ccache
-
-notifications:
-  irc: "chat.freenode.net#cleanflight"
-  use_notice: true
-  skip_join: true
