@@ -70,7 +70,7 @@
 //#define USE_MAG_HMC5883
 
 #define INVERTER
-#define BEEPER
+//#define BEEPER
 //#define DISPLAY
 
 #define USB_IO
@@ -91,7 +91,7 @@
 #define USE_SPI_DEVICE_1
 #define USE_SPI_DEVICE_2
 
-#define USE_I2C
+//#define USE_I2C
 #define I2C_DEVICE (I2CDEV_2) // Flex port - SCL/PB10, SDA/PB11
 
 #define USE_ADC
@@ -119,7 +119,7 @@
 #define ADC_BATTERY     ADC_CHANNEL1
 #define ADC_RSSI        ADC_CHANNEL2
 
-#define LED_STRIP
+//#define LED_STRIP
 #define LED_STRIP_TIMER TIM3
 #define WS2811_DMA_TC_FLAG           DMA1_FLAG_TC6
 #define WS2811_DMA_HANDLER_IDENTIFER DMA1Channel6Descriptor
@@ -131,7 +131,7 @@
 
 #define USE_SERIAL_4WAY_BLHELI_INTERFACE
 
-#define SONAR
+//#define SONAR
 #define SONAR_TRIGGER_PIN           Pin_5   // (PB5)
 #define SONAR_TRIGGER_GPIO          GPIOB
 #define SONAR_ECHO_PIN              Pin_0   // (PB0) - only 3.3v ( add a 1K Ohms resistor )
@@ -149,6 +149,7 @@
 #define USE_CLI
 #define USE_EXTI
 #define TARGET_MOTOR_COUNT 6
+#define GTUNE
 
 
 
