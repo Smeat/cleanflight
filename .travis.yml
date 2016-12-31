@@ -1,8 +1,6 @@
 # boards are ordered by priority so that when monitoring a build developers get feedback on the important ones first.
 env:
   - RUNTESTS=True
-  - PUBLISHMETA=False
-  - PUBLISHDOCS=False
   - TARGET=CC3D
   - TARGET=CJMCU
 
