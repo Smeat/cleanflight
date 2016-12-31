@@ -42,8 +42,8 @@
 
 #define DEFAULT_GYRO_SYNC 0
 
-#define MAG
-#define USE_MAG_HMC5883
+//#define MAG
+//#define USE_MAG_HMC5883
 
 #define BRUSHED_MOTORS
 
@@ -61,7 +61,6 @@
 // #define SOFT_I2C_PB1011 // If SOFT_I2C is enabled above, need to define pinout as well (I2C1 = PB67, I2C2 = PB1011)
 // #define SOFT_I2C_PB67
 
-#if (FLASH_SIZE > 64)
 #define USE_ADC
 
 #define ADC_INSTANCE                ADC1
@@ -76,14 +75,14 @@
 #define ADC_CHANNEL_COUNT 1
 
 #define ADC_BATTERY     ADC_CHANNEL1
-#endif
+
 
 #define DEFAULT_RX_FEATURE FEATURE_RX_PPM
 
 #define SERIAL_RX
 #define USE_CLI
 
-#define SPEKTRUM_BIND
+//#define SPEKTRUM_BIND
 // UART2, PA3
 #define BIND_PORT  GPIOA
 #define BIND_PIN   Pin_3
@@ -92,22 +91,22 @@
 #define USE_QUAD_MIXER_ONLY
 
 
-#if (FLASH_SIZE > 64)
-#define BLACKBOX
+
+//#define BLACKBOX
 #define GTUNE
-#else
+
 #define SKIP_3D_FLIGHT
 #define SKIP_SERIAL_PASSTHROUGH
 #define SKIP_TASK_STATISTICS
 #define SKIP_CLI_FRILLS
 #define SKIP_CLI_STATUS
 #define SKIP_CLI_COMMAND_HELP
-#define SKIP_PID_MWREWRITE
-#define SKIP_PID_MW23
+//#define SKIP_PID_MWREWRITE
+//#define SKIP_PID_MW23
 #define SKIP_BOARD_ALIGNMENT // CJMCU only has one alignment.
 #define SKIP_SERIAL_PASSTHROUGH
 
-#endif
+
 
 
 // IO - assuming all IOs on 48pin package TODO

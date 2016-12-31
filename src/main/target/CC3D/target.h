@@ -60,25 +60,25 @@
 #define ACC_MPU6000_ALIGN CW270_DEG
 
 // External I2C BARO
-#define BARO
-#define USE_BARO_MS5611
-#define USE_BARO_BMP085
-#define USE_BARO_BMP280
+//#define BARO
+//#define USE_BARO_MS5611
+//#define USE_BARO_BMP085
+//#define USE_BARO_BMP280
 
 // External I2C MAG
-#define MAG
-#define USE_MAG_HMC5883
+//#define MAG
+//#define USE_MAG_HMC5883
 
 #define INVERTER
 #define BEEPER
-#define DISPLAY
+//#define DISPLAY
 
 #define USB_IO
 
 #define USE_VCP
 #define USE_UART1
 #define USE_UART3
-//#define USE_SOFTSERIAL1
+#define USE_SOFTSERIAL1
 #define SERIAL_PORT_COUNT 4
 
 #define USE_UART1_TX_DMA
@@ -124,7 +124,7 @@
 #define WS2811_DMA_TC_FLAG           DMA1_FLAG_TC6
 #define WS2811_DMA_HANDLER_IDENTIFER DMA1Channel6Descriptor
 
-#define SPEKTRUM_BIND
+//#define SPEKTRUM_BIND
 // UART3, PB11 (Flexport)
 #define BIND_PORT  GPIOB
 #define BIND_PIN   Pin_11
