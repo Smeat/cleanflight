@@ -37,3 +37,11 @@ script: ./.travis.sh
 cache:
   - apt
   - ccache
+
+deploy:
+  provider: releases
+  api_key: "$OAUTH"
+  file: "obj/cleanflight_CC3D.hex"
+  skip_cleanup: true
+  on:
+    tags: true
