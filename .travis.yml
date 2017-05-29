@@ -61,11 +61,3 @@ cache:
 #  irc: "chat.freenode.net#cleanflight"
 #  use_notice: true
 #  skip_join: true
-
-notifications:
-  irc:
-    channels:
-      - "chat.freenode.net#cleanflight"
-    use_notice: true
-    skip_join: true
-
