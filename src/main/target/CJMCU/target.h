@@ -126,6 +126,9 @@
 #undef LED_STRIP
 #define USE_CLI
 
+#define MAG
+#define USE_MAG_HMC5883
+
 #define USE_ADC
 //#define CURRENT_METER_ADC_PIN   PB1
 #define VBAT_ADC_PIN            PA4
@@ -135,6 +138,7 @@
 #define USE_UART3
 #define USE_SOFTSERIAL1
 
+#undef SERIAL_PORT_COUNT
 #define SERIAL_PORT_COUNT       4
 
 #define UART3_RX_PIN            PB11
