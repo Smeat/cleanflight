@@ -54,7 +54,7 @@
 #define USE_SPI
 #define USE_SPI_DEVICE_1
 
-#define USE_RX_NRF24
+//#define USE_RX_NRF24
 #ifdef USE_RX_NRF24
 
 #define USE_RX_SPI
@@ -122,7 +122,29 @@
 
 #if (FLASH_SIZE <= 64)
 #undef BLACKBOX
-#endif
+#else
+#undef LED_STRIP
+#define USE_CLI
+
+#define USE_ADC
+//#define CURRENT_METER_ADC_PIN   PB1
+#define VBAT_ADC_PIN            PA4
+//#define RSSI_ADC_PIN            PB0
+
+
+#define USE_UART3
+#define USE_SOFTSERIAL1
+
+#define SERIAL_PORT_COUNT       4
+
+#define UART3_RX_PIN            PB11
+#define UART3_TX_PIN            PB10
+
+#define SOFTSERIAL1_TX_PIN	PA0 // PWM 1
+#define SOFTSERIAL1_RX_PIN	PA1 // PWM 2
+
+
+#endif // FLASH_SIZE > 64
 
 // Number of available PWM outputs
 //#define MAX_PWM_OUTPUT_PORTS    4
