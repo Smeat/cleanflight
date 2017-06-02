@@ -97,7 +97,7 @@ PG_RESET_TEMPLATE(batteryConfig_t, batteryConfig,
     .vbatmaxcellvoltage = 43,
     .vbatmincellvoltage = 33,
     .vbatwarningcellvoltage = 35,
-    .batteryNotPresentLevel = 55, // VBAT below 5.5 V will be ignored
+    .batteryNotPresentLevel = 20, // VBAT below 2 V will be ignored
     .voltageMeterSource = DEFAULT_VOLTAGE_METER_SOURCE,
 
     // current
