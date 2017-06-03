@@ -76,6 +76,8 @@
 
 #define SERIAL_PORT_COUNT       5
 
+#define USE_MSP_UART
+
 #ifndef CC3D_OPBL
 #define SOFTSERIAL1_TX_PIN      PB5 // PWM 2
 #define SOFTSERIAL1_RX_PIN      PB0 // PWM 3
