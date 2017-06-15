@@ -25,6 +25,9 @@
 #define TARGET_CONFIG
 #endif
 
+#define FRSKY_PID_TELEMETRY_HACK
+#undef GPS
+
 #define CONFIG_FASTLOOP_PREFERRED_ACC ACC_DEFAULT
 
 #define BRUSHED_ESC_AUTODETECT
@@ -172,3 +175,4 @@
 #else
 #define USED_TIMERS             (TIM_N(1) | TIM_N(2) | TIM_N(3) | TIM_N(8) | TIM_N(15) | TIM_N(16))
 #endif
+

@@ -25,7 +25,6 @@
 #include <stdint.h>
 
 #include "platform.h"
-
 #ifdef TELEMETRY
 
 #include "common/maths.h"
@@ -179,6 +178,26 @@ static void sendBaro(void)
     sendDataHead(ID_ALTITUDE_AP);
     serialize16(ABS(getEstimatedAltitude() % 100));
 }
+
+#if defined(FRSKY_PID_TELEMETRY_HACK) && !defined(GPS)
+static void sendPID(void){
+	uint16_t p,i,d;
+	uint8_t pidProfileIndex = getCurrentPidProfileIndex();
+	const pidProfile_t *pidProfile = pidProfiles(pidProfileIndex);
+
+	p = pidProfile->pid[PID_ROLL].P;
+	i = pidProfile->pid[PID_ROLL].I;
+	d = pidProfile->pid[PID_ROLL].D;
+
+	sendDataHead(ID_ACC_X);
+	serialize16(p*100);
+	sendDataHead(ID_ACC_Y);
+	serialize16(i*100);
+	sendDataHead(ID_ACC_Z);
+	serialize16(d*100);
+
+}
+#endif
 
 #ifdef GPS
 static void sendGpsAltitude(void)
@@ -523,7 +542,11 @@ void handleFrSkyTelemetry(void)
     cycleNum++;
 
     // Sent every 125ms
+#ifdef FRSKY_PID_TELEMETRY_HACK
+      sendPID();
+#else
     sendAccel();
+#endif
     sendVario();
     sendTelemetryTail();
 
@@ -547,7 +570,7 @@ void handleFrSkyTelemetry(void)
         }
 
 #ifdef GPS
-        if (sensors(SENSOR_GPS)) {
+        if (sensors(SENSOR_GPS)) {asdasd
             sendSpeed();
             sendGpsAltitude();
             sendSatalliteSignalQualityAsTemperature2();
