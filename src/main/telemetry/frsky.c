@@ -185,9 +185,9 @@ static void sendPID(void){
 	uint8_t pidProfileIndex = getCurrentPidProfileIndex();
 	const pidProfile_t *pidProfile = pidProfiles(pidProfileIndex);
 
-	p = pidProfile->pid[PID_ROLL].P;
-	i = pidProfile->pid[PID_ROLL].I;
-	d = pidProfile->pid[PID_ROLL].D;
+	p = pidProfile->P8[PIDROLL];
+	i = pidProfile->I8[PIDROLL];
+	d = pidProfile->D8[PIDROLL];
 
 	sendDataHead(ID_ACC_X);
 	serialize16(p*100);
